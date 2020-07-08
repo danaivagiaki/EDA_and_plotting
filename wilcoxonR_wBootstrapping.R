@@ -12,11 +12,6 @@ labka_train_diabetes <- read.table("./LABKA_train_diabetes.tsv", sep="\t", fileE
 labka_val <- read.table("./LABKA_val.tsv", sep="\t", fileEncoding = "ISO-8859-1", header = TRUE, na.strings = "NA")
 labka_val_diabetes <- read.table("./LABKA_val_diabetes.tsv", sep="\t", fileEncoding = "ISO-8859-1", header = TRUE, na.strings = "NA")
 
-iupac_measurement = tibble(`NPU_code`= c("NPU19763", "NPU02319", "NPU01961", "NPU02320", "NPU02321", "NPU01944", "NPU03562", "NPU03568",
-                                         "NPU01960", "NPU18162", "NPU02593"),
-                           `Name`= c("FERRITIN", "HGB", "HCT", "MCH", "MCHC", "MCV", "MPV", "PLT", "RBC", "RDW-CV", "WBC"))
-
-
 labka_train <- mutate(labka_train, Diabetes = ifelse(PID %in% labka_train_diabetes$PID, 1, 0))
 labka_val <- mutate(labka_val, Diabetes = ifelse(PID %in% labka_val_diabetes$PID, 1, 0))
 
